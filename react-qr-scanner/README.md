@@ -32,6 +32,7 @@
          * Generate a QR Code relevant to the source which is taken from the content entered in the text field
          * Scan a QR Code in the device and decode it and display the source to the user
          * Scan a QR Code using the web cam and display its source to the user
+   
     * Code **Generate QR Code** (Package QR Code is used)
          * Create a text field and a button using TextField and Button in material ui respectively
             * Text field ⇒ Used to get the QR code source from the user
@@ -41,6 +42,7 @@
          * Create another state to determine the state of the generated QR code URL and using the set function corresponding to that state set the input QR code source text URL 
            as a URL inside the generateQrCode()
          * Conditionally display the QR Code image by checking the text value of the text field (Add **download** property to download the QR code image)
+   
     * Code **Scan QR Code** (Package QR Reader is used)
          * Create a button using Button in material ui
          * Add QrReader component with the following properties
@@ -49,11 +51,16 @@
          * Create a state to include the scanned result and use its set method to set the QR code value inside the functionality relevant to onScan()
          * Display the scan result inside the relevant Grid
          * Create a function to handle the onClick() of the button (openImageDialog() is used to get the QR Code needs to be scanned from the device)
+   
     * Code **Scan QR Code using the web cam**
          * Add QrReader component with the following properties
             * delay, style, onError(), onScan()
          * Create the functions relevannt to onError() and onScan()
          * Create a state to include the scanned result and use its set method to set the QR code value inside the functionality relevant to onScan()
+   
+### Screen shot of the created QR Code Scanner Application
+   
+   ![QR Scanner ss](https://user-images.githubusercontent.com/61134846/128589794-9b652927-5b2f-44a5-9c41-76d0d4872a2f.png)
    
    
    
