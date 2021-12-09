@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {findAllByAltText} from "@testing-library/react";
 
 class UserGreeting extends Component {
 
