@@ -6,22 +6,33 @@ class UserGreeting extends Component {
         super(props)
 
         this.state = {
-            isLoggedIn: false //Change the value of isLoggedIn state attribute to change the message of the component
+            isLoggedIn: true //Change the value of isLoggedIn state attribute to change the message of the component
         }
     }
     render() {
         /**
+         * Using ternary operator to implement conditional rendering
+         */
+        return(
+            this.state.isLoggedIn ?(
+                    <div>Welcome Methma !</div>  //evaluate if the condition is true
+                ):(
+                <div>Welcome Guest !</div> //evaluate if the condition is false
+                )
+        )
+
+        /**
          * Using element variables to implement conditional rendering
          */
-        let greetingMessage
-        if (this.state.isLoggedIn) {
-            greetingMessage = <div>Welcome Methma !</div>
-        }
-        else{
-            greetingMessage = <div>Welcome Guest !</div>
-        }
-
-        return <div>{greetingMessage}</div>
+        // let greetingMessage
+        // if (this.state.isLoggedIn) {
+        //     greetingMessage = <div>Welcome Methma !</div>
+        // }
+        // else{
+        //     greetingMessage = <div>Welcome Guest !</div>
+        // }
+        //
+        // return <div>{greetingMessage}</div>
 
         /**
          * Using if/else to implement conditional rendering
