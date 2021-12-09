@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {findAllByAltText} from "@testing-library/react";
 
 class UserGreeting extends Component {
 
@@ -6,20 +7,25 @@ class UserGreeting extends Component {
         super(props)
 
         this.state = {
-            isLoggedIn: true //Change the value of isLoggedIn state attribute to change the message of the component
+            isLoggedIn: false //Change the value of isLoggedIn state attribute to change the message of the component
         }
     }
     render() {
         /**
+         * Using circuit operator to implement conditional rendering
+         */
+        return this.state.isLoggedIn && <div>Welcome Methma !</div>
+
+        /**
          * Using ternary operator to implement conditional rendering
          */
-        return(
-            this.state.isLoggedIn ?(
-                    <div>Welcome Methma !</div>  //evaluate if the condition is true
-                ):(
-                <div>Welcome Guest !</div> //evaluate if the condition is false
-                )
-        )
+        // return(
+        //     this.state.isLoggedIn ?(
+        //             <div>Welcome Methma !</div>  //evaluate if the condition is true
+        //         ):(
+        //         <div>Welcome Guest !</div> //evaluate if the condition is false
+        //         )
+        // )
 
         /**
          * Using element variables to implement conditional rendering
