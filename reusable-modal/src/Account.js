@@ -10,12 +10,32 @@ const modalReducer = (state:any, action: any) => {
     switch (action.type) {
         case ADD_ACCOUNT_CONFIRM:
             console.log("Add account confirm");
+            return {
+                heading: 'Confirm account addition',
+                content: 'Are you sure you want to add the account?',
+                show: true
+            }
         case ADD_ACCOUNT_SUCCESS:
             console.log("Add account success");
+            return {
+                heading: 'Successful account addition',
+                content: 'You successfully added this account',
+                show: true
+            }
         case REMOVE_ACCOUNT_CONFIRM:
             console.log("Remove account confirm");
+            return {
+                heading: 'Confirm account removal',
+                content: 'Are you sure you want to remove this account?',
+                show: true
+            }
         case REMOVE_ACCOUNT_SUCCESS:
             console.log("Remove account success")
+            return {
+                heading: 'Successful account removal',
+                content: 'You successfully removed this account',
+                show: true
+            }
     }
 }
 
@@ -24,8 +44,6 @@ const Account = () => {
     const [modalState, modalDispatch] = useReducer(modalReducer,{
         heading: '',
         content: '',
-        confirmButtonText: '',
-        confirmButtonAction: '',
         show: false
     })
 
