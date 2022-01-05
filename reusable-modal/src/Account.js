@@ -47,11 +47,17 @@ const Account = () => {
         show: false
     })
 
+    const dispatchModalAction = (action: string) => {
+        modalDispatch({
+            type: action
+        })
+    }
+
     return(
         <>
             <h4>Add and Remove account</h4>
-            <button>Add account</button>
-            <button>Remove account</button>
+            <button onClick={() => dispatchModalAction(ADD_ACCOUNT_CONFIRM)}>Add account</button>
+            <button onClick={() => dispatchModalAction(REMOVE_ACCOUNT_CONFIRM)}>Remove account</button>
         </>
     );
 }
