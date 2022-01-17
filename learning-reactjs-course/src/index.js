@@ -4,13 +4,18 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
+let city = "Colombo";
+
+let person = {
+    name : "Methma",
+    age : 22
+}
+
 ReactDOM.render(
-  <ul>
-      <li>Hot Dogs</li>
-      <li>Hamburgers</li>
-      <li>Pizza</li>
-      <li>Pasta</li>
-  </ul>,
+    <div>
+        <h1 id="header" className="cool-text">Hello from {city}</h1>
+        <h4>Hi I'm {person.name}. I'm {person.age} years old</h4>
+    </div>,
   document.getElementById('root')
 );
 
