@@ -5,11 +5,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  React.createElement("div", {style:{color:'blue'}},
-      React.createElement("li",null, "Hot Dogs"),
-      React.createElement("li",null, "Hamburgers"),
-      React.createElement("li",null, "Pizza"),
-      React.createElement("li",null, "Pasta")),
+  <ul>
+      <li>Hot Dogs</li>
+      <li>Hamburgers</li>
+      <li>Pizza</li>
+      <li>Pasta</li>
+  </ul>,
   document.getElementById('root')
 );
 
