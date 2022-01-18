@@ -11,21 +11,25 @@ let person = {
     age : 22
 }
 
-function Hello({library, message, number}){
+function App(){
+    return(<div>
+        <Hello library="React" message="Have fun"/>
+        <Hello library="Angular" message="Have fun"/>
+        <Hello library="Springboot" message="Have fun"/>
+    </div>);
+}
+function Hello({library, message}){
     return (
         <div>
             <h1>Welcome to {library}!</h1>
             <p>{message}</p>
-            <p>{number} props total</p>
         </div>
     );
 }
 
 ReactDOM.render(
     <div>
-        <h1 id="header" className="cool-text">Hello from {city}</h1>
-        <h4>Hi I'm {person.name}. I'm {person.age} years old</h4>
-        <Hello library="React" message="Have fun" number={3}/>
+        <App/>
     </div>,
   document.getElementById('root')
 );
