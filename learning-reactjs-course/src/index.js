@@ -21,17 +21,21 @@ function SignOut(){
 }
 
 function App(props){
-    if(props.message === "logged"){
-        return <LoggedInMessage name="Methma"/>
-    }
-    else if(props.message === "signOut"){
-        return <SignOut/>
-    }
+    return(
+        <div>
+            {(props.message === "logged") ?
+                <LoggedInMessage name="Methma"/>
+                : props.message === "signOut" ?
+                <SignOut/> :
+                  <h1>User not recognized !</h1>
+            }
+        </div>
+    );
 }
 
 ReactDOM.render(
     <div>
-        <App message="logged"/>
+        <App message="jbjb"/>
     </div>,
   document.getElementById('root')
 );
