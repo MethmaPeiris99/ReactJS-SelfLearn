@@ -4,20 +4,13 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
-const listOfFrameworks = [
-    {id: "1", name: "React", version: 4.5},
-    {id: "2", name: "Angular", version: 5.7},
-    {id: "3", name: "Springboot", version: 9.0}
-];
+const listOfNumbers = [1, 2, 3, 4];
 
-function App({frameworks}){
+function App({numbers}){
     return(
       <ul>
-          {frameworks.map(framework =>(
-              <div key={framework.id}>
-                  <h2>{framework.name}</h2>
-                  <h4>Version: {framework.version}</h4>
-              </div>
+          {numbers.map(number =>(
+              <li key={number.toString()}>{number}</li>
           ))}
       </ul>
     );
@@ -25,10 +18,9 @@ function App({frameworks}){
 
 ReactDOM.render(
     <div>
-        <App frameworks={listOfFrameworks}/>
+        <App numbers={listOfNumbers}/>
     </div>,
   document.getElementById('root')
 );
-
 
 reportWebVitals();
