@@ -11,11 +11,12 @@ let person = {
     age : 22
 }
 
-function Hello(){
+function Hello(props){
+    console.log(props);
     return (
         <div>
-            <h1>Welcome to React !</h1>
-            <p>Let's build something cool</p>
+            <h1>Welcome to {props.library}!</h1>
+            <p>{props.message}</p>
         </div>
     );
 }
@@ -24,7 +25,7 @@ ReactDOM.render(
     <div>
         <h1 id="header" className="cool-text">Hello from {city}</h1>
         <h4>Hi I'm {person.name}. I'm {person.age} years old</h4>
-        <Hello/>
+        <Hello library="React" message="Have fun"/>
     </div>,
   document.getElementById('root')
 );
