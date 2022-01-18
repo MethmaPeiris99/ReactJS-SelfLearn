@@ -4,21 +4,34 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
-const listOfNumbers = [1, 2, 3, 4];
-
-function App({numbers}){
+function LoggedInMessage({name}){
     return(
-      <ul>
-          {numbers.map((number, i) =>(
-              <li key={i}>{number}</li>
-          ))}
-      </ul>
+        <div>
+            <h1>Welcome {name} !</h1>
+        </div>
     );
+}
+
+function SignOut(){
+    return(
+        <div>
+            <h1>Thank you for using the app !</h1>
+        </div>
+    )
+}
+
+function App(props){
+    if(props.message === "logged"){
+        return <LoggedInMessage name="Methma"/>
+    }
+    else if(props.message === "signOut"){
+        return <SignOut/>
+    }
 }
 
 ReactDOM.render(
     <div>
-        <App numbers={listOfNumbers}/>
+        <App message="logged"/>
     </div>,
   document.getElementById('root')
 );
