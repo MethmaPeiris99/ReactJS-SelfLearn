@@ -20,22 +20,18 @@ function SignOut(){
     )
 }
 
-function App(props){
+function App(){
     return(
-        <div>
-            {(props.message === "logged") ?
-                <LoggedInMessage name="Methma"/>
-                : props.message === "signOut" ?
-                <SignOut/> :
-                  <h1>User not recognized !</h1>
-            }
-        </div>
+        <React.Fragment>
+            <LoggedInMessage name="Methma"/>
+            <SignOut/>
+        </React.Fragment>
     );
 }
 
 ReactDOM.render(
     <div>
-        <App message="jbjb"/>
+        <App/>
     </div>,
   document.getElementById('root')
 );
