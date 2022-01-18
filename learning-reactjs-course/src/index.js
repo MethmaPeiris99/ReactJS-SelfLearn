@@ -14,7 +14,7 @@ function App({frameworks}){
     return(
       <ul>
           {frameworks.map(framework =>(
-              <div>
+              <div key={framework.id}>
                   <h2>{framework.name}</h2>
                   <h4>Version: {framework.version}</h4>
               </div>
