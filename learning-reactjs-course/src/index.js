@@ -11,13 +11,12 @@ let person = {
     age : 22
 }
 
-function Hello(props){
-    console.log(Object.keys(props));
+function Hello({library, message, number}){
     return (
         <div>
-            <h1>Welcome to {props.library}!</h1>
-            <p>{props.message}</p>
-            <p>{Object.keys(props).length} props total</p>
+            <h1>Welcome to {library}!</h1>
+            <p>{message}</p>
+            <p>{number} props total</p>
         </div>
     );
 }
