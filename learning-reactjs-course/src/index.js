@@ -22,10 +22,10 @@ function SignOut(){
 
 function App(){
     return(
-        <React.Fragment>
+        <>
             <LoggedInMessage name="Methma"/>
             <SignOut/>
-        </React.Fragment>
+        </>
     );
 }
 
