@@ -12,12 +12,12 @@ let person = {
 }
 
 function Hello(props){
-    console.log(props);
+    console.log(Object.keys(props));
     return (
         <div>
             <h1>Welcome to {props.library}!</h1>
             <p>{props.message}</p>
-            <p>{props.number} props total</p>
+            <p>{Object.keys(props).length} props total</p>
         </div>
     );
 }
