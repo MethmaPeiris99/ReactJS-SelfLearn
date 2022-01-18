@@ -9,8 +9,8 @@ const listOfNumbers = [1, 2, 3, 4];
 function App({numbers}){
     return(
       <ul>
-          {numbers.map(number =>(
-              <li key={number.toString()}>{number}</li>
+          {numbers.map((number, i) =>(
+              <li key={i}>{number}</li>
           ))}
       </ul>
     );
