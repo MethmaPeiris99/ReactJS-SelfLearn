@@ -1,39 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
 import reportWebVitals from './reportWebVitals';
 
-function LoggedInMessage({name}){
-    return(
-        <div>
-            <h1>Welcome {name} !</h1>
-        </div>
-    );
-}
-
-function SignOut(){
-    return(
-        <div>
-            <h1>Thank you for using the app !</h1>
-        </div>
-    )
-}
-
 function App(){
+    const [status, setStatus] = useState("Open");
+
     return(
-        <>
-            <LoggedInMessage name="Methma"/>
-            <SignOut/>
-        </>
+        <div>
+            <h1>Status: {status}</h1>
+            <button
+                onClick={() => setStatus("Open")}>
+                Open
+            </button>
+            <button
+                onClick={() => setStatus("Closed")}>
+                Closed
+            </button>
+            <button
+                onClick={() => setStatus("Back in 5 minutes")}>
+                Break
+            </button>
+        </div>
     );
 }
 
-const[,,three] = ["Java","Python","HTML"];
-
-// console.log(one);
-// console.log(two);
-console.log(three);
 
 ReactDOM.render(
     <div>
