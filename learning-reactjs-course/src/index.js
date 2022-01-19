@@ -29,6 +29,12 @@ function App(){
     );
 }
 
+const[,,three] = ["Java","Python","HTML"];
+
+// console.log(one);
+// console.log(two);
+console.log(three);
+
 ReactDOM.render(
     <div>
         <App/>
