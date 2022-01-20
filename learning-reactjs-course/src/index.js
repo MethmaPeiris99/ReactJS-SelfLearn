@@ -3,28 +3,36 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-function Checkbox(){
-    const [checked, setChecked] = useState(false);
+function App(){
+    const [firstValue, setFirstValue] = useState("");
+    const [secondValue, setSecondValue] = useState("");
 
-    useEffect(()=>{
-        alert(`checked: ${checked.toString()}`);
-    });
+    useEffect(()=> {
+        console.log(`field 1: ${firstValue}`);
+    },[firstValue]);
+
+    useEffect(()=> {
+        console.log(`field 2: ${secondValue}`);
+    },[firstValue,secondValue]);
 
     return(
         <>
-            <input
-                type="checkbox"
-                value={checked}
-                onChange={() => setChecked(checked => !checked)}
-            />
-            {checked ? "Checked" : "Not checked"}
+            <lable>
+                Favourite Phrase:
+                <input value={firstValue} onChange={e=> setFirstValue(e.target.value)}/>
+            </lable>
+            <br/>
+            <lable>
+                Second Favourite Phrase:
+                <input value={secondValue} onChange={e=> setSecondValue(e.target.value)}/>
+            </lable>
         </>
     );
 }
 
 ReactDOM.render(
     <div>
-        <Checkbox/>
+        <App/>
     </div>,
   document.getElementById('root')
 );
