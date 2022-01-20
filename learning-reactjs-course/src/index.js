@@ -3,30 +3,31 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+function GitHubUser({login}){
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch(`https://api.github.com/users/${login}`)
+            .then(response => response.json())
+            .then(setData)
+            .catch(console.error)
+    },[]);
+
+    if(data){
+        return (
+            <div>
+                {/*{JSON.stringify(data)};*/}
+                <h1>{data.login}</h1>
+                <img src={data.avatar_url} width={100}/>
+            </div>
+        );
+    }
+    return null;
+}
+
 function App(){
-    const [firstValue, setFirstValue] = useState("");
-    const [secondValue, setSecondValue] = useState("");
-
-    useEffect(()=> {
-        console.log(`field 1: ${firstValue}`);
-    },[firstValue]);
-
-    useEffect(()=> {
-        console.log(`field 2: ${secondValue}`);
-    },[firstValue,secondValue]);
-
     return(
-        <>
-            <lable>
-                Favourite Phrase:
-                <input value={firstValue} onChange={e=> setFirstValue(e.target.value)}/>
-            </lable>
-            <br/>
-            <lable>
-                Second Favourite Phrase:
-                <input value={secondValue} onChange={e=> setSecondValue(e.target.value)}/>
-            </lable>
-        </>
+        <GitHubUser login="MethmaPeiris99"/>
     );
 }
 
